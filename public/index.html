@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Audio Streaming</title>
+        <link rel="stylesheet" href="./styles.css">
+   
+</head>
+
+<body>
+
+    <div id =information>
+        <h1>Audio broadcasting</h1>
+        <hr><br>
+        <div><b>Broadcasting room name: </b></div>
+        <div id="connectRoom">ActionLab</div>
+        <br>
+        <div><b>Number of visitors connecting:</b>
+            <div id='numOfvisitor'>0</div>
+        </div>
+        <br>
+        <div><b>Speaker is hosting in room:</b>
+            <div id='hostExist'>No</div>
+        </div>
+        <br>
+        <div><b>Number of listensers in room:</b>
+            <div id='numOfListener'>0</div>
+        </div>
+        <br>
+        
+        <div id="streamFromAction">Welcome, you are not in ActionLab room yet</div>
+
+        <h2>Local:</h2>
+        <h3>ID: <span id="socketId">disconnected</span></h3>
+       
+        <div id="lineWave"visualizer>
+                <h2>Line wave</h2>
+        </div><br><br>
+    
+    </div>
+
+    <canvas id="visualizer"></canvas>
+      
+    <div id="playButton"></div>
+   
+
+    
+    
+
+    <script type="text/javascript" src="./socket.io-client/dist/socket.io.js"></script>
+    <script type="text/javascript" src="lib.js"></script>
+   
+   
+
+    <!-- this is the html control command!!!!!!!-------------------------------- -->
+    <script type="text/javascript">
+
+        document.getElementById("information").style.display = "none";
+        
+        let socket = new Socket('', 5000);
+        console.log(socket);
+        
+        socket.socket.on('getIP', hostIP => {
+            console.log(hostIP)
+            if (hostIP == 'localhost:5000'){
+                document.getElementById("information").style.display = "block";
+                document.getElementById("playButton").style.display = "none";
+
+            }
+        })
+
+
+        let room = document.getElementById('connectRoom').innerHTML;
+        let hostExist = document.getElementById('hostExist').innerHTML;
+        let listensers = document.getElementById('numOfListener').innerHTML;
+        let hostId = null;
+     
+ 
+    </script>
+</body>
+
+</html>

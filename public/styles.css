@@ -1,0 +1,31 @@
+button {
+    width: 300px;
+    height: 100px;
+    border-radius: 100px;
+    font-size: 50px;
+    color: white;
+    background-color: green;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+messageClient {
+    width: 600px;
+    height: 100px;
+    font-size: 50px;
+    color: black;
+    background-color: white;
+    position: absolute;
+    
+}
+
+canvas {
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+}
