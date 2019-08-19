@@ -1,0 +1,17 @@
+{
+  "name": "audio-broadcasting",
+  "version": "1.0.0",
+  "description": "One to many microphone broadcasting in real-time",
+  "main": "main.js",
+  "author": "Wei Tan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "socket.io": "^2.2.0",
+    "webrtc-adapter": "^7.2.3"
+  },
+  "nodemonConfig": {
+    "watch": "server.js"
+  }
+}
